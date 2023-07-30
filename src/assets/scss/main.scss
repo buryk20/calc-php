@@ -1,0 +1,15 @@
+@import "./module/normalize";
+@import "./module/_variables.scss";
+@import "./module/_mixins.scss";
+@import "./module/_header.scss";
+@import "./module/_form";
+@import "./module/_application-accepted";
+@import "./module/_footer.scss";
+@import "./module/ups-battery-selection";
+
+body {
+  font-family: $font-main;
+  font-size: 16px;
+  color: $color-gray-900;
+  line-height: 120%;
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Калькулятор подбора АКБ для ИБП</title>
+</head>
+
+<body>
+  <main class="ups-battery-selection">
+    <section class="ups-battery-selection__title-wrp">
+      <h1 class="ups-battery-selection__title">Калькулятор подбора АКБ для ИБП W</h1>
+      <h2 class="ups-battery-selection__text">Путем использования инструмента подбора аккумуляторных батарей для
+        устройства бесперебойного питания, возможно
+        провести приближенный расчет необходимой емкости аккумулятора для данного источника непрерывного питания.</h2>
+    </section>
+    <section class="ups-battery-selection__form">
+      <form class="ups-battery-selection__form-wrp">
+        <div class="ups-battery-selection__form-input-wrp">
+          <div class="ups-battery-selection__form-wrp-text">
+            <span>
+              Нагрузка, W:
+            </span>
+            <div class="ups-battery-selection__help-cont-wrp">
+              <img src="/public/icon/help-icon.svg" alt="help">
+              <div class="ups-battery-selection__help-text-wrp">
+                <p>
+                  Суммарная нагрузка, которая подается на ИБП. Можно посмотреть в тех документации приборов, которые
+                  подключены к ИБП
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="ups-battery-selection__error">Введите значение</p>
+          <input class="ups-battery-selection__form-input" type="number">
+        </div>
+        <div class="ups-battery-selection__form-input-wrp">
+          <div class="ups-battery-selection__form-wrp-text">
+            <div>
+              <span>
+                КПД инвертора %:
+              </span>
+            </div>
+            <div class="ups-battery-selection__help-cont-wrp">
+              <img src="/public/icon/help-icon.svg" alt="help">
+              <div class="ups-battery-selection__help-text-wrp">
+                <p>
+                  КПД инвертора можно посмотреть в паспорте ИБП, если вы не знаете это значение, то ставьте по умолчанию
+                  0,8.
+                </p>
+              </div>
+            </div>
+            <div class="ups-battery-selection__form-switch-wrp">
+              <span class="ups-battery-selection__form-switch"></span>
+            </div>
+          </div>
+          <input class="ups-battery-selection__form-input active" type="number" placeholder="80">
+        </div>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

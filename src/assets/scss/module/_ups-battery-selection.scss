@@ -1,0 +1,159 @@
+.ups-battery-selection {
+  @include widthPaga;
+  &__title-wrp {
+    margin-bottom: 24px;
+    padding-top: 90px;
+
+    text-align: center;
+
+    @extend %flexCent;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  &__text {
+    max-width: 860px;
+    width: 100%;
+
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__form {
+    margin-bottom: 24px;
+  }
+
+  &__form-wrp-text {
+    margin-bottom: 16px;
+
+    @extend %flexCent;
+    justify-content: flex-start;
+
+    gap: 8px;
+  }
+
+  &__help-text-wrp {
+    width: 276px;
+
+    padding: 16px;
+
+    position: absolute;
+    bottom: 34px;
+    right: 80%;
+    transform: translate(50%);
+
+    background-color: $color-gray-100;
+    border-radius: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease-in-out;
+
+    &::after {
+      width: 24px;
+      height: 24px;
+      content: "";
+
+      position: absolute;
+      bottom: -12px;
+      right: 44%;
+      transform: rotate(-45deg);
+
+      display: flex;
+
+      background-color: $color-gray-100;
+    }
+  }
+
+  &__help-cont-wrp {
+    position: relative;
+
+    cursor: pointer;
+
+    &:hover .ups-battery-selection__help-text-wrp {
+      opacity: 1;
+      visibility: inherit;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  &__form-input {
+    max-width: 326px;
+    height: 40px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border: 1px solid $color-gray-200;
+    border-radius: 8px;
+
+    &.error {
+      border: 1px solid red;
+    }
+
+    &.disable {
+      border: 1px solid $color-gray-90;
+      color: $color-gray-90;
+    }
+  }
+
+  &__form-wrp {
+    @extend %flexCentBetwin;
+  }
+
+  &__error {
+    position: absolute;
+    top: 16px;
+
+    display: none;
+
+    font-size: 14px;
+    color: red;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__form-input-wrp {
+    position: relative;
+  }
+
+  &__form-switch-wrp {
+    width: 56px;
+    height: 32px;
+
+    display: flex;
+
+    background-color: $color-gray-150;
+    border-radius: 32px;
+    cursor: pointer;
+
+    &.active .ups-battery-selection__form-switch {
+      right: 28px;
+
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  &__form-switch {
+    width: 28px;
+    height: 28px;
+
+    position: absolute;
+    top: 2px;
+    right: 52px;
+
+    display: flex;
+
+    background-color: white;
+    border-radius: 50%;
+
+    transition: 0.3s ease-in-out;
+  }
+}
