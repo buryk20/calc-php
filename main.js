@@ -1,8 +1,8 @@
 
 import './src/assets/scss/main.scss';
 
-// import { formSubmit } from './src/js/formSubmit.js';
-// formSubmit();
+import { upsBatterySelection } from './src/js/upsBatterySelection.js';
+upsBatterySelection();
 
 // import { headerMenu } from './src/js/headerMenu.js';
 // headerMenu();

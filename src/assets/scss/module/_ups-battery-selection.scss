@@ -1,7 +1,9 @@
 .ups-battery-selection {
   @include widthPaga;
+  @extend %marginCenter;
+
   &__title-wrp {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     padding-top: 90px;
 
     text-align: center;
@@ -27,7 +29,14 @@
     margin-bottom: 24px;
   }
 
+  &__form-wrp {
+    margin-bottom: 24px;
+
+    @extend %flexCentBetwin;
+  }
+
   &__form-wrp-text {
+    height: 36px;
     margin-bottom: 16px;
 
     @extend %flexCent;
@@ -96,14 +105,10 @@
       border: 1px solid red;
     }
 
-    &.disable {
+    &.disabled {
       border: 1px solid $color-gray-90;
       color: $color-gray-90;
     }
-  }
-
-  &__form-wrp {
-    @extend %flexCentBetwin;
   }
 
   &__error {
@@ -134,9 +139,16 @@
     border-radius: 32px;
     cursor: pointer;
 
+    transition: 0.3s ease-in-out;
+
     &.active .ups-battery-selection__form-switch {
       right: 28px;
 
+      transition: 0.3s ease-in-out;
+    }
+
+    &.active {
+      background-color: $color-gray-200;
       transition: 0.3s ease-in-out;
     }
   }
@@ -146,7 +158,7 @@
     height: 28px;
 
     position: absolute;
-    top: 2px;
+    top: 4px;
     right: 52px;
 
     display: flex;
@@ -155,5 +167,41 @@
     border-radius: 50%;
 
     transition: 0.3s ease-in-out;
+  }
+
+  &__h2 {
+    margin-bottom: 24px;
+
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__form-result-title {
+    margin-bottom: 8px;
+  }
+
+  &__btn-result {
+    height: 40px;
+
+    padding-left: 24px;
+    padding-right: 24px;
+
+    border-radius: 8px;
+    background-color: $color-blue-70;
+    border: 1px solid $color-blue-70;
+    color: white;
+
+    transition: 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: $color-blue-70;
+
+      transition: 0.3s;
+    }
+  }
+
+  &__form-result-text {
+    margin-bottom: 16px;
   }
 }

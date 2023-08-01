@@ -8,13 +8,14 @@
 </head>
 
 <body>
-  <main class="ups-battery-selection">
+  <main data-upd-battery-selection class="ups-battery-selection">
     <section class="ups-battery-selection__title-wrp">
       <h1 class="ups-battery-selection__title">Калькулятор подбора АКБ для ИБП W</h1>
       <h2 class="ups-battery-selection__text">Путем использования инструмента подбора аккумуляторных батарей для
         устройства бесперебойного питания, возможно
         провести приближенный расчет необходимой емкости аккумулятора для данного источника непрерывного питания.</h2>
     </section>
+    <h2 class="ups-battery-selection__h2">РАСЧЕТ ЕМКОСТИ АККУМУЛЯТОРНОЙ БАТАРЕИ ДЛЯ ИСТОЧНИКА БЕСПЕРЕБОЙНОГО ПИТАНИЯ</h2>
     <section class="ups-battery-selection__form">
       <form class="ups-battery-selection__form-wrp">
         <div class="ups-battery-selection__form-input-wrp">
@@ -47,17 +48,56 @@
               <div class="ups-battery-selection__help-text-wrp">
                 <p>
                   КПД инвертора можно посмотреть в паспорте ИБП, если вы не знаете это значение, то ставьте по умолчанию
-                  0,8.
+                  80.
                 </p>
               </div>
             </div>
-            <div class="ups-battery-selection__form-switch-wrp">
+            <div data-btn-disable class="ups-battery-selection__form-switch-wrp">
               <span class="ups-battery-selection__form-switch"></span>
             </div>
           </div>
-          <input class="ups-battery-selection__form-input active" type="number" placeholder="80">
+          <input data-kpd-invertor disabled value="80" class="ups-battery-selection__form-input disabled" type="number" placeholder="80">
+        </div>
+        <div class="ups-battery-selection__form-input-wrp">
+          <div class="ups-battery-selection__form-wrp-text">
+            <span>
+              Номинальное напряжение АКБ, V:
+            </span>
+            <div class="ups-battery-selection__help-cont-wrp">
+              <img src="/public/icon/help-icon.svg" alt="help">
+              <div class="ups-battery-selection__help-text-wrp">
+                <p>
+                  Номинальное напряжение аккумуляторной батареи.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="ups-battery-selection__error">Введите значение</p>
+          <input class="ups-battery-selection__form-input" type="number">
+        </div>
+        <div class="ups-battery-selection__form-input-wrp">
+          <div class="ups-battery-selection__form-wrp-text">
+            <span>
+              Время работы:, ч:
+            </span>
+            <div class="ups-battery-selection__help-cont-wrp">
+              <img src="/public/icon/help-icon.svg" alt="help">
+              <div class="ups-battery-selection__help-text-wrp">
+                <p>
+                  Время которое должен проработать ИБП
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="ups-battery-selection__error">Введите значение</p>
+          <input class="ups-battery-selection__form-input" type="number">
         </div>
       </form>
+      <div class="ups-battery-selection__form-resul-wrp">
+        <p class="ups-battery-selection__form-result-title">РЕЗУЛЬТАТ:</p>
+        <p class="ups-battery-selection__form-result-text">Минимальная ёмкость АКБ, ч = <span data-result><strong>12</strong></span></p>
+        <button data-result-btn class="ups-battery-selection__btn-result">Рассчитать</button>
+      </div>
     </section>
   </main>
   <script type="module" src="/main.js"></script>
