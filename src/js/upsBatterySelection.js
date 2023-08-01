@@ -1,3 +1,6 @@
+import Validation from './validation';
+import GlobalMethods from './classMethods';
+
 export let upsBatterySelection = function() {
     const updBatterySelectionVar = document.querySelector('[data-upd-battery-selection]');
 
@@ -5,6 +8,16 @@ export let upsBatterySelection = function() {
         const btnDisable = document.querySelector('[data-btn-disable]');
         const dataKpdInvertor = document.querySelector('[data-kpd-invertor]');
 
+        const inputLoadW = document.querySelector('[data-load-w]');
+        const inputInverter = document.querySelector('[data-kpd-invertor]');
+        const inputTameWork = document.querySelector('[data-tame-work]');
+        const inputRatedVoltage = document.querySelector('[data-rated-voltage]');
+        const inputArr = [inputLoadW, inputInverter, inputTameWork, inputRatedVoltage];
+
+        const btnResult = document.querySelector('[data-result-btn]');
+
+        const validation = new Validation();
+        const globalMethods = new GlobalMethods();
 
         btnDisable.addEventListener('click', function () {
             this.classList.toggle('active');
@@ -14,6 +27,23 @@ export let upsBatterySelection = function() {
             } else {
                 dataKpdInvertor.removeAttribute('disabled');
             }
-        })
+        });
+
+        btnResult.addEventListener('click', () => {
+            globalMethods.delClassArr(inputArr, 'error');
+            let arrBoolean = validation.checkEmptiness(inputArr);
+            if(arrBoolean.some(el => el === false)) {
+                arrBoolean.forEach((el, index) => {
+                    if(el === false) {
+                        inputArr[index].classList.add('error');
+                    }
+                });
+            } else {
+                let inputLoadWValue = inputLoadW.value;
+                let inputInverterValue = inputInverter.value;
+                let inputTameWorkValue = inputTameWork.value;
+                let inputRatedVoltageValue = inputRatedVoltage.value;
+            }
+        });
     }
 }
