@@ -1,19 +1,21 @@
 .main {
-    @extend %flexCent;
+  margin-bottom: 64px;
+  @extend %flexCent;
 
-    &__wrp {
-        max-width: $width-page;
-        width: 100%;
+  &__wrp {
+    max-width: $width-page;
+    width: 100%;
 
-        padding-right: 16px;
-        padding-left: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
 
-        display: grid;
-        grid-template-columns: 3.5fr 1fr;
-        gap: 0px 16px;
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+    gap: 0px 16px;
 
-        @include __860 {
-            display: flex;
-        }
+    @include __860 {
+      display: flex;
+      flex-direction: column;
     }
+  }
 }

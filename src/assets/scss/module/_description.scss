@@ -1,28 +1,28 @@
 .description {
-    h2 {
-        margin-bottom: 24px;
+  h2 {
+    margin-bottom: 24px;
 
-        font-size: 24px;
-        text-align: center;
-        color: $color-blue-70;
-        line-height: 140%;
+    font-size: 20px;
+    text-align: center;
+    color: $color-blue-70;
+    line-height: 140%;
 
-        @include __620 {
-            font-size: 18px;
-        }
+    @include __620 {
+      font-size: 18px;
     }
+  }
 
-    ul {
-        padding-left: 24px;
-        margin-bottom: 24px;
-        gap: 16px;
+  ul {
+    padding-left: 24px;
+    margin-bottom: 24px;
+    gap: 16px;
 
-        display: flex;
-        flex-direction: column;
-        list-style: auto;
+    display: flex;
+    flex-direction: column;
+    list-style: auto;
 
-        p {
-            margin-bottom: 8px;
-        }
+    p {
+      margin-bottom: 8px;
     }
+  }
 }

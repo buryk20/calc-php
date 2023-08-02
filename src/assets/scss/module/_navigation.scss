@@ -1,17 +1,26 @@
 .navigation {
+  @include __860 {
+    // display: none;
+  }
 
-    @include __860 {
-        display: none;
+  &__wrp {
+    top: 224px;
+
+    position: sticky;
+
+    a {
+      color: $color-blue-70;
+      transition: 0.3s;
+
+      &:hover {
+        text-decoration: revert;
+        transition: 0.3s;
+      }
     }
+  }
 
-    &__wrp {
-        top: 90px;
-
-        position: sticky;
-    }
-
-    &__item-text {
-        font-size: 16px;
-        font-weight: 400;
-    }
+  &__item-text {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }

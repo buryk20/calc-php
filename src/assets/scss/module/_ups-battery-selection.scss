@@ -1,7 +1,9 @@
 .ups-battery-selection {
   width: 100%;
 
-  overflow-x: hidden;
+  @include __860 {
+    margin-bottom: 64px;
+  }
 
   &__title-wrp {
     margin-bottom: 32px;
@@ -27,7 +29,7 @@
   }
 
   &__form {
-    margin-bottom: 24px;
+    margin-bottom: 48px;
 
     @include __620 {
       margin-bottom: 48px;
@@ -55,6 +57,8 @@
 
     @extend %flexCent;
     justify-content: flex-start;
+
+    font-size: 14px;
 
     gap: 8px;
   }
@@ -106,7 +110,7 @@
   }
 
   &__form-input {
-    max-width: 326px;
+    max-width: 126px;
     height: 40px;
 
     padding-left: 16px;
@@ -153,8 +157,8 @@
   }
 
   &__form-switch-wrp {
-    width: 56px;
-    height: 32px;
+    width: 36px;
+    height: 24px;
 
     position: relative;
 
@@ -179,12 +183,12 @@
   }
 
   &__form-switch {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
 
     position: absolute;
     top: 2px;
-    right: 26px;
+    right: 14px;
 
     display: flex;
 
@@ -242,5 +246,16 @@
   &__form-result-number {
     font-weight: 700;
     font-size: 18px;
+  }
+
+  &__line-sep {
+    width: 100%;
+    height: 1px;
+
+    margin-bottom: 48px;
+
+    display: flex;
+
+    background-color: $color-gray-900;
   }
 }

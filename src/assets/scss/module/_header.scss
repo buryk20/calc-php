@@ -1,3 +1,88 @@
 .header {
   width: 100%;
+  height: 72px;
+
+  @extend %flexCent;
+
+  background-color: $color-blue-70;
+
+  &__wrp {
+    @include widthPaga;
+    @extend %flexCentBetwin;
+  }
+
+  &__locale-ru,
+  &__locale-ua {
+    height: 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+  &__locale-ua {
+    &:hover {
+      color: $color-blue-10;
+    }
+
+    &:hover .header__locale-ua-icon {
+      border: 2px solid $color-blue-10;
+    }
+  }
+
+  &__locale-ru {
+    &:hover {
+      color: red;
+    }
+  }
+
+  &__locale-ua {
+    @extend %flexCent;
+
+    gap: 8px;
+  }
+
+  &__locale-ua-icon {
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+
+  &__locale-line {
+    height: 24px;
+    width: 2px;
+
+    display: flex;
+
+    background-color: white;
+  }
+
+  &__locale-wrp {
+    @extend %flexCent;
+
+    gap: 18px;
+  }
+
+  &__locale-ua-wrp {
+    @extend %flexCent;
+
+    gap: 8px;
+  }
+
+  &__locale-item-wrp {
+    position: relative;
+  }
+
+  &__locale-line-active {
+    width: 0;
+    height: 2px;
+
+    display: flex;
+
+    position: absolute;
+    bottom: -2px;
+
+    background-color: white;
+
+    &.active {
+      width: 100%;
+    }
+  }
 }
