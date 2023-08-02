@@ -1,0 +1,17 @@
+.navigation {
+
+    @include __860 {
+        display: none;
+    }
+
+    &__wrp {
+        top: 90px;
+
+        position: sticky;
+    }
+
+    &__item-text {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}

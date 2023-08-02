@@ -47,6 +47,12 @@
   }
 }
 
+@mixin __620 {
+  @media (max-width: 620px) {
+    @content;
+  }
+}
+
 // #about-us:before {
 //   display: block;
 //   content: "";

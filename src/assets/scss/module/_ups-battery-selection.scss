@@ -1,6 +1,7 @@
 .ups-battery-selection {
-  @include widthPaga;
-  @extend %marginCenter;
+  width: 100%;
+
+  overflow-x: hidden;
 
   &__title-wrp {
     margin-bottom: 32px;
@@ -27,12 +28,25 @@
 
   &__form {
     margin-bottom: 24px;
+
+    @include __620 {
+      margin-bottom: 48px;
+    }
   }
 
   &__form-wrp {
     margin-bottom: 24px;
 
+    gap: 24px;
+
     @extend %flexCentBetwin;
+    flex-wrap: wrap;
+
+    @include __620 {
+      gap: 16px;
+
+      flex-direction: column;
+    }
   }
 
   &__form-wrp-text {
@@ -109,6 +123,11 @@
       border: 1px solid $color-gray-90;
       color: $color-gray-90;
     }
+
+    @include __620 {
+      max-width: none;
+      width: 100%;
+    }
   }
 
   &__error {
@@ -127,11 +146,17 @@
 
   &__form-input-wrp {
     position: relative;
+
+    @include __620 {
+      width: 100%;
+    }
   }
 
   &__form-switch-wrp {
     width: 56px;
     height: 32px;
+
+    position: relative;
 
     display: flex;
 
@@ -142,7 +167,7 @@
     transition: 0.3s ease-in-out;
 
     &.active .ups-battery-selection__form-switch {
-      right: 28px;
+      right: 2px;
 
       transition: 0.3s ease-in-out;
     }
@@ -158,8 +183,8 @@
     height: 28px;
 
     position: absolute;
-    top: 4px;
-    right: 52px;
+    top: 2px;
+    right: 26px;
 
     display: flex;
 
@@ -198,10 +223,24 @@
       color: $color-blue-70;
 
       transition: 0.3s;
+
+      @include __620 {
+        background-color: $color-blue-70;
+        color: white;
+      }
+    }
+
+    @include __620 {
+      width: 100%;
     }
   }
 
   &__form-result-text {
     margin-bottom: 16px;
+  }
+
+  &__form-result-number {
+    font-weight: 700;
+    font-size: 18px;
   }
 }
