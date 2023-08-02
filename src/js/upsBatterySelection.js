@@ -15,6 +15,7 @@ export let upsBatterySelection = function() {
         const inputArr = [inputLoadW, inputInverter, inputTameWork, inputRatedVoltage];
 
         const btnResult = document.querySelector('[data-result-btn]');
+        const resultOutput = document.querySelector('[data-result]');
 
         const validation = new Validation();
         const globalMethods = new GlobalMethods();
@@ -24,6 +25,7 @@ export let upsBatterySelection = function() {
             dataKpdInvertor.classList.toggle('disabled');
             if(dataKpdInvertor.classList.contains('disabled')) {
                 dataKpdInvertor.setAttribute('disabled', '');
+                dataKpdInvertor.value = 80;
             } else {
                 dataKpdInvertor.removeAttribute('disabled');
             }
@@ -43,6 +45,16 @@ export let upsBatterySelection = function() {
                 let inputInverterValue = inputInverter.value;
                 let inputTameWorkValue = inputTameWork.value;
                 let inputRatedVoltageValue = inputRatedVoltage.value;
+                let resultAh;
+
+                resultAh = (inputLoadWValue / inputRatedVoltageValue) * inputTameWorkValue;
+                console.log(resultAh);
+                if(inputInverterValue > 1) {
+                    resultAh = resultAh/(inputInverterValue/100);
+                } else {
+                    resultAh = resultAh/inputInverterValue;
+                }
+                resultOutput.innerHTML = resultAh;
             }
         });
     }
