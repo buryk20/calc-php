@@ -54,7 +54,7 @@ export let upsBatterySelection = function() {
                 } else {
                     resultAh = resultAh/inputInverterValue;
                 }
-                resultOutput.innerHTML = resultAh;
+                resultOutput.innerHTML = Math.ceil(resultAh);
             }
         });
     }

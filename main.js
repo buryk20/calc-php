@@ -4,6 +4,9 @@ import './src/assets/scss/main.scss';
 import { upsBatterySelection } from './src/js/upsBatterySelection.js';
 upsBatterySelection();
 
+import { helpIcon } from './src/js/helpIcon.js';
+helpIcon();
+
 // import { headerMenu } from './src/js/headerMenu.js';
 // headerMenu();
 

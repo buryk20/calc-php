@@ -61,12 +61,14 @@
     font-size: 14px;
 
     gap: 8px;
+
+    @include __620 {
+      max-width: 240px;
+    }
   }
 
   &__help-text-wrp {
     width: 276px;
-
-    padding: 16px;
 
     position: absolute;
     bottom: 34px;
@@ -80,6 +82,37 @@
     visibility: hidden;
 
     transition: 0.3s ease-in-out;
+
+    @include __860 {
+      width: 100%;
+      padding: 16px;
+
+      transform: translate(0);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: fixed;
+
+      text-align: center;
+
+      z-index: 11;
+
+      backdrop-filter: blur(3px);
+      background-color: $color-blue-opacity-60;
+      border-radius: 0;
+
+      &.active {
+        opacity: 1;
+        visibility: inherit;
+        transition: 0.3s ease-in-out;
+      }
+    }
 
     &::after {
       width: 24px;
@@ -97,6 +130,61 @@
     }
   }
 
+  &__help-btn-close {
+    width: 30px;
+    height: 30px;
+
+    display: none;
+
+    position: absolute;
+    top: -14px;
+    right: -10px;
+
+    border-radius: 50%;
+    border: 2px solid $color-blue-70;
+    background-color: white;
+
+    z-index: 11;
+    @include __860 {
+      display: flex;
+    }
+  }
+
+  &__help-btn-line-r,
+  &__help-btn-line-l {
+    width: 22px;
+    height: 2px;
+
+    display: flex;
+
+    position: absolute;
+    top: 12px;
+    right: 2px;
+
+    background-color: $color-blue-70;
+  }
+
+  &__help-btn-line-r {
+    transform: rotate(-45deg);
+  }
+
+  &__help-btn-line-l {
+    transform: rotate(45deg);
+  }
+
+  &__help-text {
+    padding: 16px;
+
+    position: relative;
+
+    border-radius: 8px;
+    background-color: $color-gray-100;
+
+    @include __860 {
+      background-color: white;
+    }
+  }
+
   &__help-cont-wrp {
     position: relative;
 
@@ -106,6 +194,20 @@
       opacity: 1;
       visibility: inherit;
       transition: 0.3s ease-in-out;
+
+      @include __860 {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    @include __860 {
+      &.active > .ups-battery-selection__help-text-wrp {
+        opacity: 1;
+        visibility: inherit;
+        transition: 0.3s ease-in-out;
+      }
     }
   }
 

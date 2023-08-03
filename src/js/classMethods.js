@@ -6,6 +6,31 @@ export default class GlobalMethods
         });
     }
 
+    delClickClassActiveArrStopPrapagation(arrClick, arrDel) {
+        arrClick.forEach((el, index) => {
+            el.addEventListener('click', (event) => {
+                event.stopPropagation();
+                arrDel[index].classList.remove('active');
+            });
+        });
+    }
+
+    arrClickAddActive(arr) {
+        arr.forEach((el, index) => {
+            el.addEventListener('click', function(){
+                this.classList.add('active');
+            });
+        });
+    }
+
+    stopPropagationArr(arr) {
+        arr.forEach((el) => {
+            el.addEventListener('click', (event) => {
+                event.stopPropagation();
+            })
+        })
+    }
+
     animationInputs(inputArr, labelArr) {
         inputArr.forEach((el, index) => {
             el.addEventListener('click', function() {
